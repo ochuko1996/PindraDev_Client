@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -11,8 +11,13 @@ export const GlobalStyle = createGlobalStyle`
         --shadedRed : #fdf3f3;
         --gray1: rgb(71,88,99);
         --gray2: rgb(124,136,143);
+        --gray3: rgb(30, 50, 63);
         --blue: #6096BA;
         --dark-blue: #5171A5;
     }
    
+`
+export const Container = styled.div`
+    max-width: 1200px;
+    margin: 0 auto;
 `

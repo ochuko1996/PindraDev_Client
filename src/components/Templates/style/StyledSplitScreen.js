@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const SplitScreenContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: ${({theme})=> theme.screen.md}){
+  height: inherit;
+  @media screen and (min-width: ${({theme})=> theme.screen.lg}){
     flex-direction: row;
   }
 `

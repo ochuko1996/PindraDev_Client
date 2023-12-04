@@ -7,7 +7,7 @@ import Button from "../Atom/Button"
 import BrandLogo from '../../assets/Pindra_removebg.png'
 
 function NavBar() {
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(true)
     const [heightValue, setHeightValue] = useState(0)
     const handleToggle = ()=>{
         setToggle(prev => !prev)
