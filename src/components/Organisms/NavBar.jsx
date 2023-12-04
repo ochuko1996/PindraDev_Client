@@ -8,12 +8,30 @@ import BrandLogo from '../../assets/Pindra_removebg.png'
 
 function NavBar() {
     const [toggle, setToggle] = useState(true)
+    const [scrollEffect, setScrollEffect] = useState(false)
     const [heightValue, setHeightValue] = useState(0)
-    const handleToggle = ()=>{
-        setToggle(prev => !prev)
-    }
     const navLinksRef = useRef(null)
+    const topNavRef = useRef(null)
     const btnContainerRef = useRef(null)
+    const handleToggle = ()=>{
+			setToggle(prev => !prev)
+    }
+    useEffect(() => {
+			const topNavElement = topNavRef.current
+			const topNavHeight = topNavElement.getBoundingClientRect().height
+			const handleScroll = ()=>{
+				const scrollHeight = window.scrollY;
+        if(scrollHeight > topNavHeight){
+            setScrollEffect(true)
+        }else{
+            setScrollEffect(false)
+        }
+      }
+      window.addEventListener('scroll', handleScroll)
+    
+      return () =>  window.removeEventListener('scroll', handleScroll)
+    }, [topNavRef])
+    
     useEffect(()=>{
         const navLinksElement = navLinksRef.current
         const btnsElement = btnContainerRef.current
@@ -22,7 +40,7 @@ function NavBar() {
     },[])
   return (
    <NavWrapper>
-    <NavCenter>
+    <NavCenter ref={topNavRef} scrollEffect={scrollEffect}>
         <NavHeader>
             <Link to={'/'}>
                 <Brand src={BrandLogo} alt="Brand Logo"/>

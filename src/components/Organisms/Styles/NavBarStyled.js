@@ -1,4 +1,4 @@
-import styled from "styled-components";
+    import styled from "styled-components";
 
 export const NavWrapper = styled.nav`
     position: fixed;
@@ -17,7 +17,7 @@ export const NavCenter = styled.div`
     @media screen and (min-width: ${({theme}) => theme.screen.lg}){
         flex-direction: row;
         /* padding: 1.25rem; */
-        background-color: transparent;
+        background-color: ${props => props.scrollEffect ? "#fff": "transparent" };
         height: 8vh;
         align-items: center;
         padding: 1rem 5rem;

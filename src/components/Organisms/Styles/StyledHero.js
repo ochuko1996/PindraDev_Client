@@ -35,7 +35,7 @@ export const HeroBanner = styled.section`
 `
 export const HeroHeading = styled.h1`
     margin: 180px 0px 0px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--gray3);
     text-align: center;
     @media screen and (min-width: ${({theme})=> theme.screen.lg}){
