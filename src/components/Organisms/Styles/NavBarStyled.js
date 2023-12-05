@@ -63,7 +63,7 @@ export const LinksContainer = styled.div`
     top: 0;
     z-index: 100;
     flex-direction: column;
-    padding: 20px;
+    padding: ${props => (props.toggle ? "0": "20px")};;
     @media screen and (min-width: ${({theme}) => theme.screen.lg}){
         width: 70vw;
         justify-content: space-between;

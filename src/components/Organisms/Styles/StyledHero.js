@@ -1,9 +1,18 @@
 import styled from "styled-components";
 import { StyledButton } from "../../Atom/Styles/StyledButton";
 import Banner from '../../../assets/Image 2.jpg'
+import { SplitScreenContainer } from "../../Templates/style/StyledSplitScreen";
 export const HeroWrapper = styled.section`
     height: 100dvh;
     /* background-color: black; */
+    ${SplitScreenContainer} > div:last-child{
+        display: none;
+    }
+    @media screen and (min-width: ${({theme})=> theme.screen.lg}){
+        ${SplitScreenContainer} > div:last-child{
+            display: block;
+        }
+    }
 `
 export const HeroTextWrapper = styled.section`
     display: flex;
@@ -23,18 +32,14 @@ export const HeroTextWrapper = styled.section`
     }
     `
 export const HeroBanner = styled.section`
-    display: none;
-    @media screen and (min-width: ${({theme})=> theme.screen.lg}){
-        background-image: url('${Banner}');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100%;
-        display: block;
-    }
+    background-image: url('${Banner}');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 `
 export const HeroHeading = styled.h1`
-    margin: 180px 0px 0px;
+    margin: 280px 0px 0px;
     font-size: 2rem;
     color: var(--gray3);
     text-align: center;

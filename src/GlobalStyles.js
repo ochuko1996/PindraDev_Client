@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
    
 `
 export const Container = styled.div`
-    max-width: 1200px;
+    max-width: 100vw;
     margin: 0 auto;
+    @media screen and (min-width: ${({theme})=> theme.screen.lg}){
+        max-width: 1250px;
+        
+    }
 `

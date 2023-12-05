@@ -62,11 +62,6 @@ function NavBar() {
                 ))} 
             </NavLinks>
             <BtnWrapper ref={btnContainerRef}>
-                {/* <Link>
-                    <Button secondary>
-                        For companies
-                    </Button>
-                </Link> */}
                 <Link to={"/login"}>
                     <Button primary>
                         apply now
