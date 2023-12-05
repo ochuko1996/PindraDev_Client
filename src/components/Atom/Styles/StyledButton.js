@@ -9,6 +9,8 @@ export const StyledButton = styled.button`
     border-radius: 3px;
     font-size: 1rem;
     text-transform: capitalize;
+    cursor: pointer;
+    font-weight: 700;
     @media screen and (min-width: ${({theme})=> theme.screen.md}){
         padding: 12px 32px;
     }
